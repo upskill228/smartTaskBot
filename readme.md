@@ -60,9 +60,9 @@ PORT=3000
 Variáveis opcionais:
 
 ```env
-GEMINI_MODEL=gemini-3-flash
-GEMINI_FALLBACK_MODELS=
-GEMINI_DEBUG_LOGS=false
+GEMINI_MODEL=gemini-2.5-flash-lite
+GEMINI_FALLBACK_MODELS=gemini-3.1-flash-lite,gemini-3-flash,gemini-2.5-flash,
+GEMINI_DEBUG_LOGS=true
 GEMINI_DEBUG_JSON=false
 ```
 
