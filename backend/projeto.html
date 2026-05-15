@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enunciado Projeto Final - TaskBot AI</title>
+    <style>
+        :root {
+            --primary: #7b68ee;
+            --bg: #0f172a;
+            --card-bg: #1e293b;
+            --text: #f8fafc;
+            --accent: #38bdf8;
+            --success: #22c55e;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 { color: var(--primary); font-size: 2.5rem; margin-bottom: 10px; }
+        h2 { color: var(--accent); border-left: 4px solid var(--primary); padding-left: 15px; margin-top: 40px; margin-bottom: 20px; }
+        h3 { color: var(--primary); margin-top: 0; }
+
+        .card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .optional {
+            border: 1px dashed var(--accent);
+            background: rgba(56, 189, 248, 0.05);
+        }
+
+        code {
+            background: #000;
+            padding: 10px;
+            border-radius: 8px;
+            color: #ff79c6;
+            display: block;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            overflow-x: auto;
+            white-space: pre;
+        }
+
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+
+        .project-idea {
+            border-top: 2px solid var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge">CURSO IA & DEV</span>
+        <h1>🚀 Projeto: TaskBot Inteligente</h1>
+        <p>Criar um assistente que gere o workflow do utilizador via Linguagem Natural</p>
+    </header>
+
+    <section>
+        <h2>1. Objetivo do Projeto</h2>
+        <p>Construir uma aplicação (React ou Vanilla JS) que integre o <strong>Gemini 3 Flash</strong> para gerir tarefas de forma dinâmica. O Bot deve interpretar mensagens, manter o contexto da conversa e devolver <strong>JSON estruturado</strong> para atualizar a UI.</p>
+    </section>
+
+    <section>
+        <h2>2. Funcionalidades Core (Obrigatórias)</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>💬 Chat & Streaming</h3>
+                <ul>
+                    <li>Respostas em tempo real (Stream)</li>
+                    <li>Histórico de mensagens (Contexto)</li>
+                    <li>Interface estilo "Modern Chat"</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>📊 Gestão de Dados</h3>
+                <ul>
+                    <li>Extração de Tarefa, Prioridade e Data</li>
+                    <li>Lista de tarefas interativa (CRUD visual)</li>
+                    <li>Filtros automáticos por intenção</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>3. Casos de Uso: Ecossistema ClickUp</h2>
+        <p>O Bot deve ser capaz de mapear a linguagem informal para a estrutura organizacional que estudámos:</p>
+        
+        <div class="grid">
+            <div class="card">
+                <span class="badge" style="background: var(--success);">CRIAÇÃO AVANÇADA</span>
+                <p><em>"Adiciona uma tarefa urgente para rever o código no Espaço de Desenvolvimento para amanhã."</em></p>
+                <code>{
+  "action": "CREATE",
+  "task": "Rever código",
+  "priority": "URGENT",
+  "space": "Desenvolvimento",
+  "dueDate": "2026-05-05"
+}</code>
+            </div>
+            <div class="card">
+                <span class="badge" style="background: var(--primary);">EDIÇÃO POR CONTEXTO</span>
+                <p><em>"Afinal, muda a prioridade dessa tarefa para média e atribui-a ao Miguel."</em></p>
+                <code>{
+  "action": "UPDATE",
+  "target": "last_task",
+  "priority": "MEDIUM",
+  "assignee": "Miguel"
+}</code>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>4. Sugestões de Projetos Alternativos</h2>
+        <p>Podem adaptar a tecnologia de extração JSON e Streaming para outros domínios:</p>
+        
+        <div class="grid">
+            <div class="card project-idea">
+                <h3>🍎 NutriBot Specialist</h3>
+                <p>O utilizador descreve a refeição e o bot extrai macros e calorias, atualizando um diário alimentar.</p>
+                <code>{ "alimento": "Ovos", "kcal": 140, "proteina": "12g" }</code>
+            </div>
+            <div class="card project-idea">
+                <h3>💰 Finance Guard</h3>
+                <p>Registo de despesas por voz ou texto. O bot categoriza gastos e atualiza o saldo do utilizador.</p>
+                <code>{ "valor": 45.50, "categoria": "Lazer", "local": "Cinema" }</code>
+            </div>
+            <div class="card project-idea">
+                <h3>✈️ Travel Planner</h3>
+                <p>O utilizador diz para onde quer ir e o que quer ver; o bot cria um itinerário estruturado em lista.</p>
+                <code>{ "dia": 1, "local": "Torre Eiffel", "transporte": "Metro" }</code>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>5. Funcionalidades Opcionais (Bónus)</h2>
+        <div class="card optional">
+            <div class="grid">
+                <div>
+                    <h3>🎙️ Speech-to-Text</h3>
+                    <p>Submeter prompts através de voz usando a <strong>Web Speech API</strong>.</p>
+                </div>
+                <div>
+                    <h3>🛠️ Tool Use / Function Calling</h3>
+                    <p>Permitir que a IA execute funções reais (ex: apagar do LocalStorage).</p>
+                </div>
+                <div>
+                    <h3>🎨 Temas Dinâmicos</h3>
+                    <p>O Bot muda as cores da interface dependendo do humor da conversa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+</body>
+</html>
